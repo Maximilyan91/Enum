@@ -31,13 +31,17 @@ public class Bus extends Transport<DriverD> implements Racing{
 
     private Capacity capacity;
 
-    public Bus(String brand, String model, double engineVolume, DriverD driver) {
+    public Bus(String brand, String model, double engineVolume, DriverD driver, Capacity capacity) {
         super(brand, model, engineVolume, driver);
     }
 
     @Override
-    void printType() {
-
+    public void printType() {
+        if (capacity == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("Кузов: " + capacity);
+        }
     }
 
     public void getPitStop(Bus bus) {

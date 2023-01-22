@@ -30,13 +30,18 @@ public class Truck extends Transport<DriverC> implements Racing {
     }
 
     private Tonnage tonnage;
-    public Truck(String brand, String model, double engineVolume, DriverC driver) {
+    public Truck(String brand, String model, double engineVolume, DriverC driver, Tonnage tonnage) {
         super(brand, model, engineVolume, driver);
+        setTonnage(tonnage);
     }
 
     @Override
-    void printType() {
-
+    public void printType() {
+        if (tonnage == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("Кузов: " + tonnage);
+        }
     }
 
     public void getPitStop(Truck truck) {

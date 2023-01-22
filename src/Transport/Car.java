@@ -35,13 +35,19 @@ public class Car extends Transport<DriverB> implements Racing {
 
     private BodyType currentBodyType;
 
-    public Car(String brand, String model, double engineVolume, DriverB driver) {
+
+    public Car(String brand, String model, double engineVolume, DriverB driver, BodyType currentBodyType) {
         super(brand, model, engineVolume, driver);
+    setCurrentBodyType(currentBodyType);
     }
 
     @Override
-    void printType() {
-
+    public void printType() {
+        if (currentBodyType == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("Кузов: " + currentBodyType);
+        }
     }
 
     public void getPitStop(Car car) {
