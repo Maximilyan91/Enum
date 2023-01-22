@@ -29,8 +29,14 @@ public class Truck extends Transport<DriverC> implements Racing {
         }
     }
 
+    private Tonnage tonnage;
     public Truck(String brand, String model, double engineVolume, DriverC driver) {
         super(brand, model, engineVolume, driver);
+    }
+
+    @Override
+    void printType() {
+
     }
 
     public void getPitStop(Truck truck) {
@@ -42,5 +48,13 @@ public class Truck extends Transport<DriverC> implements Racing {
     public void getMaxSpeed(Truck truck) {
         System.out.println(truck.getBrand() + " " + truck.getModel() + " - Набрал максимальную скорость!");
 
+    }
+
+    public Tonnage getTonnage() {
+        return tonnage;
+    }
+
+    public void setTonnage(Tonnage tonnage) {
+        this.tonnage = tonnage;
     }
 }

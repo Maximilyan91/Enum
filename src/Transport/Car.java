@@ -33,7 +33,7 @@ public class Car extends Transport<DriverB> implements Racing {
         }
     }
 
-    BodyType currentBodyType;
+    private BodyType currentBodyType;
 
     public Car(String brand, String model, double engineVolume, DriverB driver) {
         super(brand, model, engineVolume, driver);
@@ -62,8 +62,6 @@ public class Car extends Transport<DriverB> implements Racing {
     public void setCurrentBodyType(BodyType currentBodyType) {
         this.currentBodyType = currentBodyType;
     }
-
-    vo
 
 }
 

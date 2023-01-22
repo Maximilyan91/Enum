@@ -29,9 +29,15 @@ public class Bus extends Transport<DriverD> implements Racing{
 
     }
 
+    private Capacity capacity;
 
     public Bus(String brand, String model, double engineVolume, DriverD driver) {
         super(brand, model, engineVolume, driver);
+    }
+
+    @Override
+    void printType() {
+
     }
 
     public void getPitStop(Bus bus) {
@@ -45,4 +51,11 @@ public class Bus extends Transport<DriverD> implements Racing{
 
     }
 
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
+    }
 }
